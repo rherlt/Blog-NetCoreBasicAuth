@@ -12,11 +12,11 @@ using Microsoft.AspNetCore.Identity;
 namespace com.rherlt.NetCoreBasicAuth.WebApplication.Controllers
 {
     [Route("api/[controller]")]
-    [UserManagerBasicAuthentication(typeof(ApplicationUser))]
     public class UserManagerAuthController : Controller
     {
-        // GET: api/values
+        // GET: api/UserManagerAuth
         [HttpGet]
+        [UserManagerBasicAuthentication(typeof(ApplicationUser))]
         public string Get()
         {
             return $"Authorized User:{HttpContext.User.Identity.Name}";

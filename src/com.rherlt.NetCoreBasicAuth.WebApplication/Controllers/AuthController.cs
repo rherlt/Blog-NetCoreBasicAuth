@@ -10,11 +10,11 @@ using Microsoft.AspNetCore.Mvc;
 namespace com.rherlt.NetCoreBasicAuth.WebApplication.Controllers
 {
     [Route("api/[controller]")]
-    [BasicAuthentication("rherlt", "passw0rd123")]
     public class AuthController : Controller
     {
-        // GET: api/values
+        // GET: api/Auth
         [HttpGet]
+        [BasicAuthentication("someone@example.com", "passw0rd123")]
         public string Get()
         {
             return $"Authorized User:{HttpContext.User.Identity.Name}";
